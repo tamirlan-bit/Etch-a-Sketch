@@ -1,0 +1,32 @@
+html {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c4d2df;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: 2px solid greenyellow;
+    width: 960px;
+    height: 960px;
+  }
+  .row {
+    display: flex;
+    flex: 1;
+    width: 100%;
+
+  }
+  .square {
+    flex:1; 
+    min-width: 5px;
+    min-height: 5px;
+    background-color: white;
+    outline: 1px dotted lightgray;
+  }
