@@ -2,9 +2,10 @@ const container = document.querySelector('.container');
 const btn = document.getElementById('btn');
 const cleartBtn = document.getElementById('clearBtn');
 const colorBtn = document.getElementById('colorBtn');
-const greyBtn = document.getElementById('greyBtn');
+const grayBtn = document.getElementById('grayBtn');
+const blackBtn = document.getElementById('blackBtn');
 
-let currentColor = 'darkgrey';
+let currentColor = 'black';
 let mode = 'default'; // default, rainbow, etc.
 
 // Function to create the grid
@@ -35,7 +36,11 @@ const createSquare = (row) => {
 const paintSquare = (e) => {
     if (mode === 'rainbow') {
         e.target.style.backgroundColor = rainbow();
-    } else {
+    }
+    else if ( mode === 'grayScale') {
+        e.target.style.backgroundColor = grayScale();
+    }
+    else {
         e.target.style.backgroundColor = currentColor;
     }
 };
@@ -62,16 +67,22 @@ colorBtn.addEventListener("click", () => {
     mode = 'rainbow';
 });
 
-// Activate grey mode
-greyBtn.addEventListener("click", () => {
+// Activate black mode
+blackBtn.addEventListener("click", () => {
     mode = 'default';
-    currentColor = 'darkgrey';
+    currentColor = 'black';
+});
+
+// Activate gray Scale mode
+grayBtn.addEventListener("click", () => {
+    mode = 'grayScale';
 });
 
 // Generate rainbow color
-function rainbow() {
-    return `hsl(${Math.floor(Math.random() * 360)}, 90%, 60%)`;
-}
+const rainbow = () => `hsl(${Math.floor(Math.random() * 360)}, 90%, 60%)`;
+
+// Generate gray scale color
+const grayScale = () => `hsl(0, 0%, ${Math.floor(Math.random() * 100)}%)`;
 
 // Create initial grid
 grid(16);

@@ -65,6 +65,6 @@ button:hover {
   min-width: 5px;
   min-height: 5px;
   background-color: white;
-  outline: 1px dotted lightgray;
+  outline: 1px dotted darkgray;
   transition: background-color 0.2s;
 }
